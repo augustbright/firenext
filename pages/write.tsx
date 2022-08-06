@@ -9,7 +9,7 @@ const Write = () => {
   const { user } = useUserData();
   const handleSubmit = useCallback(async (data: TForm) => {
     if (!user) return;
-    const postsRef = collection(firestore, "posts");
+    const postsRef = collection(firestore, "users", user.uid, "posts");
     try {
         await addDoc(postsRef, {
             ...data,

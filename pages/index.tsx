@@ -1,11 +1,8 @@
 import type { NextPage } from 'next'
-import styles from '../styles/Home.module.css'
-
+import { Feed } from '../components/feed';
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
-      feed
-    </div>
+    <Feed />
   )
 }
 

@@ -4,3 +4,11 @@ export type TUserProfile = {
     displayName: string | null;
     photoUrl: string | null;
 };
+
+export type TPost = {
+    id: string;
+    uid: string;
+    title: string;
+    content: string;
+    published: boolean;
+};
