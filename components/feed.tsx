@@ -1,4 +1,4 @@
-import { collectionGroup, getDocs, query } from "firebase/firestore";
+import { collectionGroup, getDocs, orderBy, query } from "firebase/firestore";
 import {useEffect, useState} from "react";
 import { firestore } from "../lib/firebase";
 import { TPost } from "../types";
@@ -9,7 +9,7 @@ export const Feed = () => {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const postsQuery = query(collectionGroup(firestore, 'posts'));
+      const postsQuery = query(collectionGroup(firestore, 'posts'), orderBy('createdAt'));
       const docsSnapshot = await getDocs(postsQuery);
       const docs = docsSnapshot.docs.map(doc => ({
         ...doc.data(),

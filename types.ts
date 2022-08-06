@@ -1,3 +1,5 @@
+import { Timestamp } from "firebase/firestore";
+
 export type TUserProfile = {
     uid: string;
     username: string | null;
@@ -11,4 +13,6 @@ export type TPost = {
     title: string;
     content: string;
     published: boolean;
+    username: string;
+    createdAt: Timestamp;
 };

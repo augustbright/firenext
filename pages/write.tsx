@@ -1,4 +1,4 @@
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { useCallback } from "react";
 import { toast } from "react-toastify";
 import EditPost, { TForm } from "../components/edit-post";
@@ -14,7 +14,9 @@ const Write = () => {
         await addDoc(postsRef, {
             ...data,
             uid: user.uid,
-            published: false
+            username: user.username,
+            published: false,
+            createdAt: serverTimestamp()
         });
         toast.success('Post is saved');    
     } catch {

@@ -10,12 +10,14 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
+import BookIcon from '@mui/icons-material/Book';
 import Link from "next/link";
 import useUserData from "../hooks/use-user-data";
 import UserMenu from "./user-menu";
 import { LoadData } from "./load-data";
 import AddIcon from "@mui/icons-material/Add";
+
+const APP_NAME = 'BLOGI';
 
 type Page = {
   title: string;
@@ -47,7 +49,7 @@ const AppBar = () => {
     <UuiAppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          <BookIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
@@ -63,7 +65,7 @@ const AppBar = () => {
               textDecoration: "none",
             }}
           >
-            FIRENEXT
+            {APP_NAME}
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -104,7 +106,7 @@ const AppBar = () => {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          <BookIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -121,7 +123,7 @@ const AppBar = () => {
               textDecoration: "none",
             }}
           >
-            FIRENEXT
+            {APP_NAME}
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
