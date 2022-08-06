@@ -7,6 +7,8 @@ import { PostsList } from "./posts-list";
 export const Feed = () => {
   const [posts, setPosts] = useState<TPost[]>([]);
 
+  //TODO make common interface for data providing
+
   useEffect(() => {
     const fetchPosts = async () => {
       const postsQuery = query(collectionGroup(firestore, 'posts'), orderBy('createdAt'));

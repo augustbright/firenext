@@ -15,6 +15,8 @@ import { toast } from "react-toastify";
 import { useUsernameValidation } from "../hooks/use-username-validation";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 
+// TODO photo uploading
+
 type TProps = {
   user: TUserProfile;
 };

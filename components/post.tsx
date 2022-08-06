@@ -10,6 +10,7 @@ export const Post = ({ post }: TProps) => {
     <Card>
       <CardContent>
         <Typography variant="caption" component="div">
+            {/* TODO make other users profile */}
             by @{post.username}
         </Typography>
         <Typography gutterBottom variant="h5" component="div">
